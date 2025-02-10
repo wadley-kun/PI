@@ -1,0 +1,11 @@
+header {
+    background: linear-gradient(to right, #ff3131 , #ff914d);
+    padding: 1rem 0;
+    width: auto;
+}
+
+.navbar-nav .nav-link.active, .nav-link.show, .navbar-brand, .nav-link {
+    color: var(--cor-secundaria);
+    font-size: 1.5rem;
+}
+
