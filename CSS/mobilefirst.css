@@ -1,0 +1,25 @@
+@media screen and (min-width: 1024px) {
+    /* Adicione suas ações aqui */
+    .carousel-control-next {
+        display: none;
+    }
+
+    .carousel-control-prev {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /* Adicione suas ações aqui */
+    .carousel-indicators {
+        display: none;
+    }
+
+    .carousel-control-next {
+        width: 5%;
+    }
+
+    .carousel-control-prev {
+        width: 5%;
+    }
+}

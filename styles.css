@@ -1,0 +1,14 @@
+@import url(CSS/header.css);
+@import url(CSS/banner.css);
+@import url(CSS/section.css);
+@import url(CSS/footer.css);
+@import url(CSS/mobilefirst.css);
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100..900&display=swap');
+:root {
+	--fonte-desconto: "Bebas Neue", serif;
+    --cor-secundaria: #fff;
+}
+
+section {
+    margin: 4rem 0;
+}
