@@ -1,10 +1,10 @@
 @media screen and (min-width: 1024px) {
     /* Adicione suas ações aqui */
-    .carousel-control-next {
+    .saudaveis .carousel-indicators {
         display: none;
     }
 
-    .carousel-control-prev {
+    .recomendacoes .carousel-indicators {
         display: none;
     }
 }
@@ -22,4 +22,5 @@
     .carousel-control-prev {
         width: 5%;
     }
+
 }
