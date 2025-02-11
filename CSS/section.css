@@ -17,8 +17,10 @@ h2 {
 .coluna {
     border: 2px solid black;
     border-radius: 10px;
-    min-height: 500px;
-    max-height: 500px;
+    display: inline-flex;
+    width: 15rem;
+    height: 33rem;
+    flex-direction: column;
 }
 
 .coluna h3 {
@@ -28,6 +30,14 @@ h2 {
 }
 .coluna p {
     font-size: 1.5rem;
+}
+
+.descricao {
+    padding: 0 20px;
+    display: inline-flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .preco {
