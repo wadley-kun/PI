@@ -19,7 +19,7 @@ h2 {
     border-radius: 10px;
     display: inline-flex;
     width: 15rem;
-    height: 33rem;
+    height: 35rem;
     flex-direction: column;
 }
 
@@ -41,7 +41,7 @@ h2 {
 }
 
 .preco {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;

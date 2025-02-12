@@ -24,3 +24,33 @@
     }
 
 }
+
+@media (max-width: 1024px) {
+    #carouselRecomendacoes, #carouselSaudaveis {
+        display: block;
+    }
+
+    #carouselRecomendacoes .carousel-inner, #carouselSaudaveis .carousel-inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #carouselRecomendacoes .carousel-item, #carouselSaudaveis .carousel-item {
+        display: block;
+        width: 100%;
+    }
+
+    #carouselRecomendacoes .col, #carouselSaudaveis .col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #carouselRecomendacoes .carousel-control-prev, #carouselRecomendacoes .carousel-control-next,
+    #carouselSaudaveis .carousel-control-prev, #carouselSaudaveis .carousel-control-next {
+        display: none;
+    }
+
+    #carouselRecomendacoes .carousel-indicators, #carouselSaudaveis .carousel-indicators {
+        display: none;
+    }
+}
