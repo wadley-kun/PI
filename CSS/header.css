@@ -9,3 +9,17 @@ header {
     font-size: 1.5rem;
 }
 
+#abrirCarrinho {
+    background: transparent;
+    border: none;
+}
+
+#contadorCarrinho {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: var(--cor-secundaria);
+    padding: 2px 8px;
+    border-radius: 50%;
+    color: var(--cor-primaria);
+}
+

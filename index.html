@@ -37,7 +37,7 @@
                         </li>
                     </ul>
                 </div>
-                <a href="#"><img src="recursos/img/Carrinho.png" width="30" height="30"></a>
+                <button id="abrirCarrinho" type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img src="recursos/img/Carrinho.png" width="30" height="30"><span id="contadorCarrinho">0</span></button>
             </nav>
     </header>
     <div class="banner">
@@ -80,31 +80,46 @@
 
     </div>
     <section class="container">
-        
+        <div id="carrinho" class="carrinho">
+            <h2>Carrinho de Compras</h2>
+            <ul id="listaCarrinho"></ul>
+            <p id="totalCarrinho">Total: R$ 0.00</p>
+            <button id="fecharCarrinho">Fechar</button>
+        </div>
         <div class="recomendacoes">
             <h2>QUE TAL DAR UMA CHANCE?</h2>
             <div id="carouselRecomendacoes" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                <div class="bt-n-p">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecomendacoes" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRecomendacoes" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselRecomendacoes" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselRecomendacoes" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <!-- Adicione mais botões conforme necessário -->
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
+                <div class="carousel-inner" id="Cardapio_recomendacoes">
+                    <div class="carousel-item active" >
                         <div class="row">
                             <div class="col ">
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Pizza.png" class="d-block w-100" alt="Recomendação 1">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="item1" class="item">
                                             <h3>Pizza de Frango com Catupiry</h3>
                                             <p>Deliciosa pizza de frango com catupiry, feita com ingredientes frescos e selecionados.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 34,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 34,99</p>
+                                            <button onclick="adicionarAoCarrinho(0)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>    
                                 </div>
@@ -113,15 +128,15 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Cachorro-quente.png" class="d-block w-100" alt="Recomendação 2">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="Item2" class="item">
                                             <h3>Cachorro-quente</h3>
                                             <p> Cachorro-quente com salsicha, molho de tomate, milho, ervilha, batata palha e maionese.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 8,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 8,99</p>
+                                            <button onclick="adicionarAoCarrinho(1)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -130,15 +145,15 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Hamburguer.png" class="d-block w-100" alt="Recomendação 3">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="Item3" class="item">
                                             <h3>Hamburguer Gourmet</h3>
                                             <p>Delicioso hamburguer gourmet com carne de primeira, queijo cheddar, alface...</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 29,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 29,99</p>
+                                            <button onclick="adicionarAoCarrinho(2)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -147,15 +162,15 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Porcao_Churrasco.png" class="d-block w-100" alt="Recomendação 4">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="Item4" class="item">
                                             <h3>Porção de Churrasco</h3>
                                             <p>Deliciosa porção de churrasco com carne de primeira, linguiça, frango e pão de alho.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 27,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 27,99</p>
+                                            <button onclick="adicionarAoCarrinho(3)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -164,15 +179,15 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Prato_Churrasco.png" class="d-block w-100" alt="Recomendação 5">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="Item5" class="item">
                                             <h3>Prato Feito de Churrasco</h3>
                                             <p>Delicioso prato feito de churrasco com carne de primeira, arroz, feijão, farofa e salada.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 19,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 19,99</p>
+                                            <button onclick="adicionarAoCarrinho(4)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -272,19 +287,39 @@
                     </div>
                     <!-- Adicione mais carousel-item conforme necessário -->
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecomendacoes" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselRecomendacoes" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
             </div>
         </div>
         <div class="saudaveis">
             <h2>REFEIÇÕES SAUDÁVEIS</h2>
             <div id="carouselSaudaveis" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                <div class="bt-n-p">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSaudaveis" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSaudaveis" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselSaudaveis" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselSaudaveis" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -301,8 +336,8 @@
                                             <h3></h3>
                                             <p></p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
                                             <a href="#">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
                                             </a>
@@ -474,14 +509,7 @@
                     </div>
                     <!-- Adicione mais carousel-item conforme necessário -->
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSaudaveis" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselSaudaveis" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                
             </div>
         </div>
     </section>

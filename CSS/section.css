@@ -5,6 +5,11 @@ h2 {
     font-size: 2rem;
 }
 
+button {
+    border: none;
+    background: transparent;
+}
+
 .carousel-indicators [data-bs-target] {
     background-color: var(--cor-primaria);
 }
@@ -40,21 +45,34 @@ h2 {
     justify-content: space-between;
 }
 
-.preco {
+.preco1 {
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
 }
 
-.preco img {
+.preco1 img {
     border-radius: 5px;
     background: var(--cor-primaria);
 }
 
-.preco p {
+.preco1 p {
     padding: 0.5rem;
     color: var(--cor-primaria); 
     font-family: var(--fonte-desconto);
     font-size: 1.3rem;
+}
+.carousel-control-next, .carousel-control-prev {
+    position: relative;
+    display: inline;
+}
+
+.banner .carousel-control-prev, .banner .carousel-control-next {
+        display: none;
+}  
+
+.bt-n-p {
+    justify-content: end;
+    display: flex;
 }
