@@ -38,7 +38,7 @@ button {
 }
 
 .descricao {
-    padding: 0 20px;
+    padding: 0 1px;
     display: inline-flex;
     height: 100%;
     flex-direction: column;
@@ -76,3 +76,34 @@ button {
     justify-content: end;
     display: flex;
 }
+
+.btn-carrinho {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+.btn-carrinho:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
+
+.modal-body {
+    font-size: 1.5rem;
+}
+
+.modal-title {
+    font-family: var(--fonte-desconto);
+    color: var(--cor-primaria);
+}
+
+#menu_carrinho {
+    display: flex;
+    flex-direction: row;
+}
+
+#listaCarrinho {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
