@@ -13,32 +13,32 @@
 </head>
 <body>
                     <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Carrinho</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div id="carrinho" class="carrinho">
-                                    <div id="menu_carrinho">
-                                        <ul id="imagemItem"></ul>
-                                        <div style="display: flex; flex-direction: column;">
-                                            <ul id="listaCarrinho"></ul>
-                                            <ul id="descricaoItem"></ul>
-                                        </div>
-                                    </div>
-                                    <p id="totalCarrinho"><span style="font-weight: 700;">Total: </span>R$ 0.00</p>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                              <button type="button" class="btn btn-carrinho">Finalizar Pedido</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Carrinho</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div id="carrinho" class="carrinho">
+                <div id="listaCarrinho">
+                    <img id="carrinhoImagem">
+                    <div>
+                        <h3 id="tituloCarrinho"></h3>
+                        <p id="descricaoCarrinho"></p>
+                        <p id="totalCarrinho"><span style="font-weight: 700;">Total: </span>R$ 0.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-carrinho">Finalizar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg">
