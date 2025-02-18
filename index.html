@@ -23,13 +23,9 @@
         <div class="modal-body">
             <div id="carrinho" class="carrinho">
                 <div id="listaCarrinho">
-                    <img id="carrinhoImagem">
-                    <div>
-                        <h3 id="tituloCarrinho"></h3>
-                        <p id="descricaoCarrinho"></p>
-                        <p id="totalCarrinho"><span style="font-weight: 700;">Total: </span>R$ 0.00</p>
-                    </div>
+                   
                 </div>
+                <p id="totalCarrinho"><span style="font-weight: 700;">Total: </span>R$ 0.00</p>
             </div>
         </div>
         <div class="modal-footer">
@@ -109,7 +105,7 @@
     <section class="container">
         <div class="recomendacoes">
             <h2>QUE TAL DAR UMA CHANCE?</h2>
-            <div id="carouselRecomendacoes" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+            <div id="carouselRecomendacoes" class="carousel slide" data-bs-ride="carousel">
                 <div class="bt-n-p">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecomendacoes" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -221,17 +217,17 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Ramen1.png" class="d-block w-100" alt="Recomendação 6">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="item1" class="item">
                                             <h3>Ramen de Porco</h3>
-                                            <p>Delicioso ramen de porco com macarrão, carne de porco, ovo, cebolinha e broto de feijão.</p>
+                                            <p>Delicioso Ramen de Porco com ovos cozidos e um macarrão bem temperado.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 35,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 34,99</p>
+                                            <button onclick="adicionarAoCarrinho(5)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
-                                    </div> 
+                                    </div>   
                                 </div>
                             </div>
                             <div class="col">
@@ -239,15 +235,15 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Ramen2.png" class="d-block w-100" alt="Recomendação 7">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="item1" class="item">
                                             <h3>Ramen de Frango</h3>
-                                            <p >Delicioso ramen de frango com macarrão, carne de frango, ovo, cebolinha e broto de feijão.</p>
+                                            <p>Delicioso ramen de frango com macarrão, carne de frango, ovo, cebolinha e broto de feijão.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 35,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 35,99</p>
+                                            <button onclick="adicionarAoCarrinho(6)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -257,15 +253,15 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Sushi.png" class="d-block w-100" alt="Recomendação 8">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="item1" class="item">
                                             <h3>Sushi</h3>
-                                            <p >Delicioso sushi com arroz, salmão, cream cheese, cebolinha e gergelim.</p>
+                                            <p>Delicioso sushi com arroz, salmão, cream cheese, cebolinha e gergelim.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 39,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 39,99</p>
+                                            <button onclick="adicionarAoCarrinho(7)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -274,15 +270,15 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Taco.png" class="d-block w-100" alt="Recomendação 9">
                                     <div class="descricao">
-                                        <div>
+                                        <div id="item1" class="item">
                                             <h3>Taco Mexicano</h3>
                                             <p>Delicioso Taco Mexicano com carne bem temperada e apimentada</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 22,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 22,99</p>
+                                            <button onclick="adicionarAoCarrinho(8)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -291,17 +287,17 @@
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Recomendacoes/Taco2.png" class="d-block w-100" alt="Recomendação 10">
                                     <div class="descricao">
-                                        <div>
-                                            <h3>Taco com porçãode batata</h3>
+                                        <div id="item1" class="item">
+                                            <h3>Taco Mexicano com porção</h3>
                                             <p>Delicioso Taco Mexicano com carne bem temperada e apimentada, acompanhado de porção...</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(9)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
-                                    </div> 
+                                    </div>  
                                 </div>
                             </div>
                         </div>
@@ -313,7 +309,7 @@
         </div>
         <div class="saudaveis">
             <h2>REFEIÇÕES SAUDÁVEIS</h2>
-            <div id="carouselSaudaveis" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+            <div id="carouselSaudaveis" class="carousel slide" data-bs-ride="carousel">
                 <div class="bt-n-p">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselSaudaveis" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

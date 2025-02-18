@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
     const cardapio = [
-        { nome: "Pizza de Catupiry (G)", preco: 34.99, imagem: "../recursos/img/Section_Carrossel/Recomendacoes/Pizza.png", descricao: "Deliciosa pizza de frango com catupiry, feita com ingredientes frescos e selecionados." },
-        { nome: "Cachorro-Quente", preco: 8.99, imagem: "../recursos/img/Section_Carrossel/Recomendacoes/Cachorro-quente.png", descricao: "Cachorro-quente com salsicha, molho de tomate, milho, ervilha, batata palha e maionese." },
-        { nome: "Hamburguer Gourmet", preco: 29.99, imagem: "../recursos/img/Section_Carrossel/Recomendacoes/Hamburguer.png", descricao: "Delicioso hamburguer gourmet com carne de primeira, queijo cheddar, alface..." },
-        { nome: "Porção de Churrasco", preco: 27.99, imagem: "../recursos/img/Section_Carrossel/Recomendacoes/Porcao_Churrasco.png", descricao: "Deliciosa porção de churrasco com carne de primeira, linguiça, frango e pão de alho." },
-        { nome: "Prato Feito de Churrasco", preco: 19.99, imagem: "../recursos/img/Section_Carrossel/Recomendacoes/Prato_Churrasco.png", descricao: "Delicioso prato feito de churrasco com carne de primeira, arroz, feijão, farofa e salada." }
+        { nome: "Pizza de Catupiry (G)", preco: 34.99, imagem: "recursos/img/Section_Carrossel/Recomendacoes/Pizza.png", descricao: "Deliciosa pizza de frango com catupiry, feita com ingredientes frescos e selecionados." },
+        { nome: "Cachorro-Quente", preco: 8.99, imagem: "recursos/img/Section_Carrossel/Recomendacoes/Cachorro-quente.png", descricao: "Cachorro-quente com salsicha, molho de tomate, milho, ervilha, batata palha e maionese." },
+        { nome: "Hamburguer Gourmet", preco: 29.99, imagem: "recursos/img/Section_Carrossel/Recomendacoes/Hamburguer.png", descricao: "Delicioso hamburguer gourmet com carne de primeira, queijo cheddar, alface..." },
+        { nome: "Porção de Churrasco", preco: 27.99, imagem: "recursos/img/Section_Carrossel/Recomendacoes/Porcao_Churrasco.png", descricao: "Deliciosa porção de churrasco com carne de primeira, linguiça, frango e pão de alho." },
+        { nome: "Prato Feito de Churrasco", preco: 19.99, imagem: "recursos/img/Section_Carrossel/Recomendacoes/Prato_Churrasco.png", descricao: "Delicioso prato feito de churrasco com carne de primeira, arroz, feijão, farofa e salada." }
     ];
 
     
@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const descricao = document.createElement("p");
             const imagem = document.createElement("img");
             const preco = document.createElement("p");
+
+
             titulo.textContent = item.nome;
             descricao.textContent = item.descricao;
             imagem.src = item.imagem;
@@ -58,11 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
             btnRemover.style.marginLeft = "10px";
             btnRemover.onclick = () => removerDoCarrinho(index);
 
-            titulo.appendChild(btnRemover);
-            listaCarrinho.appendChild(carrinhoImagem);
-            listaCarrinho.appendChild(titulo);
-            listaCarrinho.appendChild(descricao);
-            listaCarrinho.appendChild(preco);
+
+
+
+            const itemContainer = document.createElement("div");
+            const informacoes = document.createElement("div");
+            const valor = document.createElement("div");
+
+            itemContainer.appendChild(imagem);
+            itemContainer.appendChild(informacoes);
+            informacoes.appendChild(titulo);
+            informacoes.appendChild(descricao);
+            informacoes.appendChild(valor);
+            valor.appendChild(preco);
+            preco.appendChild(btnRemover);
+
+            listaCarrinho.appendChild(itemContainer);
         });
         
         
