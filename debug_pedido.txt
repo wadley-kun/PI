@@ -1,0 +1,1 @@
+nome=Jorge+Wadley+Saraiva+Pinto&email=jorge123%40gmail.com&endereco=Rua+cumina%2C+26%2C+Serra+Dourada+II&cep=&telefone=&pagamento=Dinheiro&troco=&observacoes=
