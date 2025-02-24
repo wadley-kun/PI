@@ -153,7 +153,7 @@
         z-index:1000;"><img src="recursos/img/Carrinho.png" width="30" height="30"><span id="contadorCarrinho">0</span></button>
         <div class="recomendacoes">
             <h2>QUE TAL DAR UMA CHANCE?</h2>
-            <div id="carouselRecomendacoes" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselRecomendacoes" class="carousel slide">
                 <div class="bt-n-p">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecomendacoes" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -357,7 +357,7 @@
         </div>
         <div class="saudaveis">
             <h2>REFEIÇÕES SAUDÁVEIS</h2>
-            <div id="carouselSaudaveis" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselSaudaveis" class="carousel slide">
                 <div class="bt-n-p">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselSaudaveis" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -381,14 +381,14 @@
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao1.png" class="d-block w-100" alt="Recomendação 1">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 1</h3>
+                                            <p>Descrição do prato 1.</p>
                                         </div>
                                         <div class="preco1">
                                             <p class="preco">R$ 24,99</p>
-                                            <a href="#">
+                                            <button onclick="adicionarAoCarrinho(10)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -398,14 +398,14 @@
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao2.png" class="d-block w-100" alt="Recomendação 2">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 2</h3>
+                                            <p>Descrição do prato 2.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(11)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -415,14 +415,14 @@
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao3.png" class="d-block w-100" alt="Recomendação 3">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 3</h3>
+                                            <p>Descrição do prato 3.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(12)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -432,14 +432,14 @@
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao4.png" class="d-block w-100" alt="Recomendação 4">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 4</h3>
+                                            <p>Descrição do prato 4.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(13)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -449,14 +449,14 @@
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao5.png" class="d-block w-100" alt="Recomendação 5">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 5</h3>
+                                            <p>Descrição do prato 5.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(14)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -470,51 +470,48 @@
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao6.png" class="d-block w-100" alt="Recomendação 6">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 6</h3>
+                                            <p>Descrição do prato 6.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(15)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
-
                                 </div>
                             </div>
                             <div class="col">
-
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao7.png" class="d-block w-100" alt="Recomendação 7">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 7</h3>
+                                            <p>Descrição do prato 7.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(16)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
-                            
                             </div>
                             <div class="col">
                                 <div class="coluna">
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao8.png" class="d-block w-100" alt="Recomendação 8">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 8</h3>
+                                            <p>Descrição do prato 8.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(17)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -524,14 +521,14 @@
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao9.png" class="d-block w-100" alt="Recomendação 9">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 9</h3>
+                                            <p>Descrição do prato 9.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(18)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>
@@ -541,14 +538,14 @@
                                     <img src="recursos/img/Section_Carrossel/Saudavel/Opcao10.png" class="d-block w-100" alt="Recomendação 10">
                                     <div class="descricao">
                                         <div>
-                                            <h3></h3>
-                                            <p></p>
+                                            <h3>Nome do Prato 10</h3>
+                                            <p>Descrição do prato 10.</p>
                                         </div>
-                                        <div class="preco">
-                                            <p href="#">R$ 24,99</p>
-                                            <a href="#">
+                                        <div class="preco1">
+                                            <p class="preco">R$ 24,99</p>
+                                            <button onclick="adicionarAoCarrinho(19)">
                                                 <img src="recursos/img/Adicionar_Ao_Carrinho.png" width="60" height="38">
-                                            </a>
+                                            </button>
                                         </div>
                                     </div> 
                                 </div>

@@ -32,17 +32,38 @@ class Database {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtém os dados do formulário
     $nome = $_POST['nome'];
-    $email = $_POST['email'];
+    $cep = $_POST['cep'];
     $telefone = $_POST['telefone'];
+    $email = $_POST['email'];
+    $endereco = $_POST['endereco'];
 
     // Cria uma instância da classe Database
     $database = new Database();
     $conn = $database->getConnection();
 
+    // Verifica se o e-mail já está cadastrado
+    $query = "SELECT * FROM cliente WHERE email = :email";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($row) {
+        echo "E-mail já cadastrado.";
+        exit;
+    }
+
     // Prepara a consulta SQL de inserção
-    $query = "INSERT INTO cliente (nome, email, telefone) VALUES ($nome, $email, $telefone)";
+    $query = "INSERT INTO cliente (nome, cep, telefone, email, endereco) 
+              VALUES (:nome, :cep, :telefone, :email, :endereco)";
     $stmt = $conn->prepare($query);
 
+    // Vincula os parâmetros
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':cep', $cep);
+    $stmt->bindParam(':telefone', $telefone);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':endereco', $endereco);
 
     // Executa a consulta
     if ($stmt->execute()) {
