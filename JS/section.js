@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log("JSON enviado:", JSON.stringify(dadosPedido)); // Verifica se os dados são válidos
     
         try {
-            const response = await fetch("enviarpedido.php", {
+            const response = await fetch("itemPedido.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
