@@ -1,42 +1,72 @@
 <?php
 header("Content-Type: application/json");
 
-// Obtém os dados JSON enviados via POST
-$dados = json_decode(file_get_contents("php://input"), true);
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "restaurante_lulu";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die(json_encode(["sucesso" => false, "mensagem" => "Falha na conexão com o banco de dados."]));
+}
+
+$dados = json_decode(file_get_contents("php://input"), true);
 if (!$dados) {
     echo json_encode(["sucesso" => false, "mensagem" => "Dados inválidos."]);
     exit;
 }
 
-// Define o nome do arquivo onde os dados serão salvos
-$arquivo = 'pedidos.json';
+$nome = $dados['nome'];
+$email = $dados['email'];
+$endereco = $dados['endereco'];
+$cep = $dados['cep'];
+$telefone = $dados['telefone'];
+$pagamento = $dados['pagamento'];
+$troco = $dados['troco'];
+$observacoes = $dados['observacoes'];
+$carrinho = $dados['carrinho'];
 
-// Verifica se o arquivo já existe e lê seu conteúdo
-if (file_exists($arquivo)) {
-    $conteudo = file_get_contents($arquivo);
-    $pedidos = json_decode($conteudo, true);
-    // Garante que o conteúdo seja um array
-    if (!is_array($pedidos)) {
-        $pedidos = [];
+// Verifica se o cliente já existe pelo email
+$stmt = $conn->prepare("SELECT id FROM cliente WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $id_cliente = $row['id'];
+} else {
+    // Insere novo cliente
+    $stmt = $conn->prepare("INSERT INTO cliente (nome, email, endereco, cep, telefone) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $nome, $email, $endereco, $cep, $telefone);
+    if ($stmt->execute()) {
+        $id_cliente = $stmt->insert_id;
+    } else {
+        echo json_encode(["sucesso" => false, "mensagem" => "Erro ao cadastrar cliente."]);
+        exit;
     }
-} else {
-    $pedidos = [];
 }
 
-// Gera um ID numérico sequencial baseado no último pedido
-$novoId = count($pedidos) > 0 ? end($pedidos)["id"] + 1 : 1;
+// Salvar pedido em pedidos.json
+$pedido = [
+    "id_cliente" => $id_cliente,
+    "nome" => $nome,
+    "email" => $email,
+    "endereco" => $endereco,
+    "cep" => $cep,
+    "telefone" => $telefone,
+    "pagamento" => $pagamento,
+    "troco" => $troco,
+    "observacoes" => $observacoes,
+    "carrinho" => $carrinho
+];
 
-// Reorganiza o array para que o ID fique no início
-$pedidoFormatado = ["id" => $novoId] + $dados;
+$arquivo_pedidos = "pedidos.json";
+$pedidos = file_exists($arquivo_pedidos) ? json_decode(file_get_contents($arquivo_pedidos), true) : [];
+$pedidos[] = $pedido;
+file_put_contents($arquivo_pedidos, json_encode($pedidos, JSON_PRETTY_PRINT));
 
-// Adiciona os novos dados (pedido) ao array
-$pedidos[] = $pedidoFormatado;
-
-// Salva o array atualizado de volta no arquivo com formatação
-if (file_put_contents($arquivo, json_encode($pedidos, JSON_PRETTY_PRINT))) {
-    echo json_encode(["sucesso" => true, "mensagem" => "Pedido recebido e salvo.", "id" => $novoId]);
-} else {
-    echo json_encode(["sucesso" => false, "mensagem" => "Erro ao salvar o pedido."]);
-}
+echo json_encode(["sucesso" => true, "mensagem" => "Pedido salvo com sucesso!"]);
+$conn->close();
 ?>
