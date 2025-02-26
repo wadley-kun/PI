@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     nome: document.getElementById("nome").value,
                     endereco: document.getElementById("endereco").value,
                     cep: document.getElementById("cep").value,
-                    telefone: document.getElementById("telefone").value,
                     pagamento: document.getElementById("pagamento").value,
                     troco: document.getElementById("troco").value,
                     observacoes: document.getElementById("observacoes").value,
@@ -111,10 +110,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 mensagem += `👤 *Nome:* ${dadosPedido.nome}%0A`;
                 mensagem += `📍 *Endereço:* ${dadosPedido.endereco}%0A`;
                 mensagem += `📦 *CEP:* ${dadosPedido.cep}%0A`;
-
-                if (dadosPedido.telefone.trim() !== "") {
-                    mensagem += `📞 *Telefone:* ${dadosPedido.telefone}%0A`;
-                }
 
                 mensagem += `💳 *Forma de pagamento:* ${dadosPedido.pagamento}%0A`;
 
@@ -141,9 +136,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
             
                 // Redirecionar para o WhatsApp
-                window.location.href = urlWhatsApp;
+                window.open(urlWhatsApp, '_blank');
                 carrinho = [];
-                atualrCarrinho();
+                atualizarCarrinho();
             } else {
                 alert("Erro ao finalizar o pedido: " + resultado.mensagem);
             }
